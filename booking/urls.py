@@ -1,9 +1,13 @@
-from django.urls import path
-from booking.views import UpcomingClassesView, BookingView, BookingsView
+from django.urls import include, path
+
+from rest_framework.routers import DefaultRouter
+
+from booking.views import FitnessClassBookView
+
+router = DefaultRouter()
+router.register(r'', FitnessClassBookView, basename='fitness_class')
 
 
 urlpatterns = [
-    path('classes/', UpcomingClassesView.as_view(), name='upcoming-classes'),
-    path('book/', BookingView.as_view(), name='booking'),
-    path('bookings/', BookingsView.as_view(), name='bookings'),
+    path('', include(router.urls)),
 ]
