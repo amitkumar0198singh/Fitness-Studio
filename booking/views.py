@@ -39,6 +39,8 @@ class FitnessClassBookView(viewsets.ViewSet):
     @action(detail=False, methods=['get'], url_path='bookings', name='list_bookings')
     def list_bookings(self, request):
         client_email = request.query_params.get('email')
+        if not client_email:
+            raise custom_exception.DataNotFoundException("Client email is required")
         client_booking_queryset = get_all_bookings().filter(client_email=client_email)
         if not client_booking_queryset.exists():
             raise custom_exception.DataNotFoundException("No bookings found")
