@@ -157,6 +157,7 @@ booking/
 ├── services.py           # Business logic
 ├── validators.py         # Input validation
 ├── utils.py              # Utility functions
+├── tests.py              # Unit Test
 ├── seeds.py              # Sample seed data
 ├── urls.py               # Endpoint routes
 ├── middlewares.py        # Logging middleware
