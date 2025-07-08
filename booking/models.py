@@ -14,8 +14,6 @@ class FitnessClass(models.Model):
 
 
     class Meta:
-        verbose_name_plural = "Fitness Classes"
-        ordering = ['class_time']
         db_table = 'fitness_class'
 
     def __str__(self):
@@ -29,9 +27,9 @@ class Booking(models.Model):
     client_name = models.CharField(max_length=255, null=True, blank=True)
     client_email = models.CharField(max_length=255, null=True, blank=True)
     booking_time = models.DateTimeField(auto_now_add=True)
+    booked_slots = models.PositiveIntegerField(default=0)
 
     class Meta:
-        ordering = ['-booking_time']
         unique_together = ['fitness_class', 'client_email']
         db_table = 'booking'
 
