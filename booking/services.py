@@ -24,8 +24,8 @@ def get_all_bookings() -> QuerySet[Booking]:
     return Booking.objects.all().order_by('-booking_time')
 
 
-def booking_create_or_update(name: str, email: str, fitness_class_obj: FitnessClass, slots: int) -> Booking:
-    booking, _ = Booking.objects.update_or_create(client_email=email, fitness_class=fitness_class_obj, defaults={'client_name': name})
+def booking_create_or_update(name: str, email: str, fitness_class: FitnessClass, slots: int) -> Booking:
+    booking, _ = Booking.objects.update_or_create(client_email=email, fitness_class=fitness_class, defaults={'client_name': name})
     booking.booked_slots += slots
     booking.save()
     return booking
@@ -36,7 +36,7 @@ def book_class(name: str, email: str, class_id: int|str, slots: int|str|None = N
     is_available_slots = validate_slots(slots, fitness_class)
     if not is_available_slots:
         raise custom_exception.DataNotFoundException("Slots are not available")
-    booking = booking_create_or_update(name, email, class_id, slots)
+    booking = booking_create_or_update(name, email, fitness_class, slots)
     fitness_class.available_slots -= slots
     fitness_class.save()
     return booking
