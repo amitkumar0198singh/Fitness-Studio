@@ -3,7 +3,7 @@
 from booking.models import FitnessClass
 
 
-def validate_request_data(required_fields, request_data):
+def validate_request_data(required_fields: list, request_data: dict) -> dict:
     for field in required_fields:
         if field not in request_data:
             return {'status': False, 'message': f"{field} is required"}
