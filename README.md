@@ -1,4 +1,3 @@
-````markdown
 # 🏋️‍♂️ Fitness Studio Booking API
 
 A Django REST API for booking and managing fitness classes like Yoga, Zumba, and HIIT.
