@@ -233,5 +233,3 @@ Response body : {'status': True, 'message': 'Fitness class is booked', ...}
 ## 📄 License
 
 This project is open-source and free to use.
-
-```
