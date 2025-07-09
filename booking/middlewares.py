@@ -30,7 +30,7 @@ class LogRequestMiddleware(MiddlewareMixin):
     def process_response(self, request, response):
         try:
             print("\n========================= Response Data =========================")
-            print(f"Response status : {response.status_code}")
+            print(f"Response status code : {response.status_code}")
             print(f"Response body : {json.loads(response.content)}")
         except Exception:
             import traceback
