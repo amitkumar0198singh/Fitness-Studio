@@ -220,7 +220,7 @@ Response body : {'status': True, 'message': 'Fitness class is booked', ...}
 
 ## 📹 Loom Video (Walkthrough)
 
-👉 [Click to Watch the Demo](https://loom.com/amit-loom-video)
+👉 [Click to Watch the Demo](https://www.loom.com/share/115d889b63ce4d8aacbf5f5503bfb0f8?sid=88278496-3f0a-4abe-a2c4-08e5dd1d92a7)
 
 ---
 
